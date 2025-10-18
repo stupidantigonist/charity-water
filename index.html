@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity Water Landing Page</title>
+    <!-- Google Fonts: Poppins for headings, Nunito for body text -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top logo -->
+    <div class="top-logo">
+        <img src="img/charitywater_logo_horizontal_AllBlack.png" alt="Charity: Water Logo">
+    </div>
+
+    <!-- Hero Section: Main landing area with video and text -->
+    <section class="hero">
+        <!-- Left side with video -->
+        <div class="hero-video">
+            <!-- Hero image that acts as video thumbnail -->
+            <img src="img/hero_img.png" alt="Clean water initiative" class="hero-img" id="heroImage">
+            <div class="video-container" id="videoContainer">
+                <!-- Video element for MP4 file - removed controls as we'll control it with JavaScript -->
+                <video id="heroVideo">
+                    <source src="video/why_water (1080p)-sound.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        
+        <!-- Add JavaScript for video/image interaction -->
+        <script>
+            // Get our elements
+            const heroImage = document.getElementById('heroImage');
+            const videoContainer = document.getElementById('videoContainer');
+            const heroVideo = document.getElementById('heroVideo');
+
+            // Initially hide the video container
+            videoContainer.style.display = 'none';
+
+            // Add click handler to the image
+            heroImage.addEventListener('click', function() {
+                // Hide the image
+                heroImage.style.display = 'none';
+                // Show the video
+                videoContainer.style.display = 'block';
+                // Play the video
+                heroVideo.play();
+            });
+
+            // When video ends
+            heroVideo.addEventListener('ended', function() {
+                // Hide the video
+                videoContainer.style.display = 'none';
+                // Show the image
+                heroImage.style.display = 'block';
+            });
+
+            // When video is paused
+            heroVideo.addEventListener('pause', function() {
+                // Hide the video
+                videoContainer.style.display = 'none';
+                // Show the image
+                heroImage.style.display = 'block';
+            });
+        </script>
+        <!-- Right side with content -->
+        <div class="hero-content">
+            <h1 class="right-h1">Safe Water Creates Communities</h1>
+            <p class="right-p">You don't just provide water, you provide for healthier communities, education, and women's livelihoods.</p>
+            <p class="right-p">Click the image to the left to learn more.</p>
+            <a href="#" class="hero-donate-button">Donate Now!</a>
+        </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="process">
+        <h2>Our Process</h2>
+        <div class="process-container">
+            <!-- Row 1: Step 1 + Photo 1 -->
+            <div class="process-row">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Planning</h3>
+                        <p>We work with local partners to pinpoint the most effective location for each community. We also take into consideration the best technology to implement considering water sources, terrain, and population.</p>
+                    </div>
+                </div>
+                <div class="photo">
+                    <img src="img/planning_img.png" alt="Process step 1">
+                </div>
+            </div>
+
+            <!-- Row 2: Step 2 + Photo 2 -->
+            <div class="process-row">
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Implementation</h3>
+                        <p>While we implement the solution with our partners, we also work with them to promote safe hygiene practices, and building a water committee.</p>
+                    </div>
+                </div>
+                <div class="photo">
+                    <img src="img/implementation_img.png" alt="Process step 2">
+                </div>
+            </div>
+
+            <!-- Row 3: Step 3 + Photo 3 -->
+            <div class="process-row">
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Post-Implementation</h3>
+                        <p>To ensure that water continues to flow for years to come, we empower local leaders, use strong operations and maintenance structures, collect data on specific WASH indicators, and implement innovative sensor technology.</p>
+                    </div>
+                </div>
+                <div class="photo">
+                    <img src="img/postimplement_img.png" alt="Process step 3">
+                </div>
+            </div>
+            <!-- Additional paragraph and link -->
+            <div class="process-extra">
+                <p>We know it's important to you that your donation is being used effectively. It's important to us, too. That's why we work hard to receive the highest grades available for accountability and transparency.</p>
+                <p><a href="#" class="process-link">Look at our Financial Reports here!→</a></p>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="impact-story">
+        <!-- Section headline -->
+        <h2>Hear About Our Impact</h2>
+        <!-- Container for image and text -->
+        <div class="impact-content">
+            <div class="impact-media">
+                <!-- Video 1 -->
+                <video id="impactVideo0" class="impact-media-item" controls>
+                    <source src="video/impact1.mp4" type="video/mp4">
+                </video>
+
+                <!-- Video 2 -->
+                <video id="impactVideo1" class="impact-media-item" controls style="display:none;">
+                    <source src="video/somuthing.mp4" type="video/mp4">
+                </video>
+
+                <!-- Image (Slide 3) -->
+                <img id="impactImage" class="impact-media-item" src= "img/impact_img.png" alt="Helen" style="display:none;">
+            </div>
+
+            <!-- Impact story text -->
+            <p id="impactText">
+                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
+            </p>
+        </div>
+
+        <!-- Prev/Next controls for impact stories -->
+        <div class="impact-controls">
+            <button id="prevImpact" class="impact-button">← Previous</button>
+            <button id="nextImpact" class="impact-button">Next →</button>
+        </div>
+
+        <script>
+            // Impact story carousel (three slides: video, video, image)
+            const impactTexts = [
+                'Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.',
+                'Samuel leads the water committee in his village. After installation, community members received training to keep the system running long-term.',
+                'After months of monitoring, communities report far fewer waterborne illnesses and more time for school and work.'
+            ];
+
+            let currentImpact = 0;
+            const video0 = document.getElementById('impactVideo0');
+            const video1 = document.getElementById('impactVideo1');
+            const imageEl = document.getElementById('impactImage');
+            const textEl = document.getElementById('impactText');
+            const prevBtn = document.getElementById('prevImpact');
+            const nextBtn = document.getElementById('nextImpact');
+
+            function showSlide(index) {
+                // Hide all media
+                video0.style.display = 'none';
+                video1.style.display = 'none';
+                imageEl.style.display = 'none';
+
+                // Pause videos so they don't keep playing in the background
+                try { video0.pause(); } catch(e) {}
+                try { video1.pause(); } catch(e) {}
+
+                // Show the selected media
+                if (index === 0) {
+                    video0.style.display = 'block';
+                } else if (index === 1) {
+                    video1.style.display = 'block';
+                } else if (index === 2) {
+                    imageEl.style.display = 'block';
+                }
+
+                // Update text
+                textEl.textContent = impactTexts[index];
+
+                // Update buttons
+                prevBtn.disabled = index === 0;
+                nextBtn.disabled = index === 2;
+            }
+
+            prevBtn.addEventListener('click', () => {
+                if (currentImpact > 0) {
+                    currentImpact -= 1;
+                    showSlide(currentImpact);
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                if (currentImpact < 2) {
+                    currentImpact += 1;
+                    showSlide(currentImpact);
+                }
+            });
+
+            // initial render
+            showSlide(currentImpact);
+        </script>
+    </section>
+
+    <!-- Call-to-Action Section: This encourages visitors to take action -->
+    <section class="call-to-action">
+        <h2>Make a Difference</h2>
+        <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
+        <a href="#" class="donate-button">Donate Now</a>
+    </section>
+
+    <!-- Bottom logo -->
+    <div class="bottom-logo">
+        <img src="img/water-can-transparent.png" alt="Charity: Water Logo">
+    </div>
+</body>
+</html>

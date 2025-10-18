@@ -1,0 +1,530 @@
+/* charity: water Brand Colors & Fonts
+
+Primary Colors:
+- Yellow:     #FFC907
+- Blue:       #003366
+
+Secondary Colors:
+- Light Blue: #8BD1CB
+- Green:      #4FCB53
+- Orange:     #FF902A
+- Red:        #F5402C
+- Dark Green: #159A48
+- Pink:       #F16061
+
+Fonts:
+- Proxima Nova
+- Avenir
+
+*/
+
+/* 
+  Charity: Water Landing Page Styles
+  This CSS uses the provided color palette and beginner-friendly styles.
+*/
+
+/* Set up the main font and background color for the whole page */
+body {
+  background-color: #f4f8fb; /* Soft light blue for a fresh look */
+  font-family: 'Nunito', 'Avenir', 'Proxima Nova', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #222;
+  position: relative; /* For absolute positioning of logos */
+  min-height: 100vh; /* Ensure full viewport height for logo positioning */
+}
+
+/* Logo styles */
+.top-logo {
+  position: absolute;
+  top: 4px;
+  right: 20px;
+  z-index: 10;
+}
+
+/* When .bottom-logo is inside .hero-video, it will be positioned relative to that container */
+.hero-video .bottom-logo {
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  z-index: 20;
+}
+
+/* Bottom logo specific styles */
+.bottom-logo img {
+  height: 48px; /* Half inch */
+  width: auto;
+  display: block;
+}
+
+/* Top logo specific styles */
+.top-logo img {
+  height: 140px; /* Slightly bigger */
+  width: auto;
+  display: block;
+}
+
+/* Add a slight shadow and rounded corners to each section for depth */
+section {
+  background: #fff; /* White background for sections */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 51, 102, 0.07); /* Soft blue shadow */
+  margin: 24px 10px; /* Space between sections */
+  padding: 24px 16px;
+}
+
+/* Hero Section Styles */
+.hero {
+  display: flex; /* Use flexbox for side-by-side layout */
+  min-height: 100vh; /* Full viewport height */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  border-radius: 0; /* Remove border radius */
+  box-shadow: none; /* Remove shadow */
+  background: #fff; /* White background */
+}
+
+/* Left side with video */
+.hero-video {
+  position: relative; /* For positioning the video */
+  width: 70%; /* Takes up 70% of the page now */
+  overflow: hidden; /* Hide overflow */
+}
+
+/* Background image */
+.hero-video img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the entire area */
+  cursor: pointer; /* Show pointer cursor on hover */
+  transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.hero-video img:hover {
+  opacity: 0.9; /* Slight dim effect on hover */
+}
+
+/* Video container */
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width of parent */
+  height: 100%; /* Full height of parent */
+  background: #000;
+}
+
+/* Video element */
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This ensures the video fills the container */
+}
+
+/* Right side content */
+.hero-content {
+  width: 30%; /* Takes remaining space now */
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertical centering */
+  align-items: center;     /* Horizontal centering */
+  text-align: center;      /* Center the text inside */
+  background-color: #FFC907; /* Right-side yellow background */
+}
+
+/* Make the headline bold and modern */
+.hero h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  color: #003366;
+}
+
+/* Style the subheadline */
+.hero p {
+  font-size: 1.2em;
+  margin-top: 0;
+  color: #003366;
+  line-height: 1.6;
+}
+
+/* Hero donate button */
+.hero-donate-button {
+  display: inline-block;
+  background-color: #003366;
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Nunito', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.1em;
+  margin-top: 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 51, 102, 0.2);
+}
+
+.hero-donate-button:hover {
+  background-color: #fff;
+  color: #003366;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 51, 102, 0.3);
+}
+
+/* Right-side typography overrides */
+/*
+  Note: Proxima Nova is a commercial font and isn't available on Google Fonts.
+  The rules below use font-family fallbacks. To use Proxima Nova and Avenir
+  exactly, add local font-face declarations or host them via a webfont service.
+*/
+.right-h1 {
+  /* Use Poppins (Google Font) for heading */
+  font-family: 'Poppins', 'Proxima Nova', 'Avenir', Arial, sans-serif;
+  font-weight: 700; /* Bold */
+  font-size: 2.2em; /* Slightly smaller than global hero h1 to fit the narrow column */
+  margin: 0 0 8px 0;
+  color: #003366; /* Right-side text navy */
+}
+
+.right-p {
+  /* Use Nunito (Google Font) for paragraphs */
+  font-family: 'Nunito', 'Avenir', 'Proxima Nova', Arial, sans-serif;
+  font-weight: 400; /* Normal */
+  color: #003366;
+  font-size: 1em;
+  margin: 0 0 12px 0;
+  line-height: 1.5;
+}
+
+/* Process Section Styles */
+.process {
+  background-color: #77A8BB;
+  color: #1A1A1A;
+  padding: 60px 40px;
+}
+
+.process h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.process-container {
+  display: flex;
+  flex-direction: column; /* Stack rows vertically */
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Each process row: step on the left, photo on the right */
+.process-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.process-row .step {
+  flex: 1; /* left column */
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.process-row .photo {
+  width: 45%; /* right column */
+  flex-shrink: 0;
+}
+
+.step-number {
+  background-color: #003366;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.2em;
+  flex-shrink: 0;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-content h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #003366;
+  margin: 0 0 10px 0;
+  font-size: 1.3em;
+}
+
+.step-content p {
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  color: #444;
+}
+
+/* Make process section paragraphs slightly darker for better contrast */
+.process p {
+  color: #1A1A1A;
+}
+
+/* Center the extra paragraph and link that appear after step 3 */
+.process-extra {
+  text-align: center;
+  max-width: 800px;
+  margin: 18px auto 0 auto; /* center and add a little space above */
+}
+
+.process-extra p {
+  margin: 8px 0; /* small vertical spacing between paragraph and link */
+}
+
+.process-link {
+  color: #003366; /* primary navy color */
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.process-link:hover {
+  text-decoration: underline;
+}
+
+/* Right side with photos */
+.process-photos {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.photo {
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 51, 102, 0.1);
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Specific styling for step 2 photo - cropped version */
+.process-row:nth-child(2) .photo img {
+  object-position: center 80%; /* Adjust this percentage to control the crop position */
+}
+
+/* Specific styling for step 3 photo - cropped version */
+.process-row:nth-child(3) .photo img {
+  object-position: center 25%; /* Adjust this percentage to control the crop position for step 3 */
+}
+
+.photo img:hover {
+  transform: scale(1.05);
+}
+
+/* Add accent color to section headings */
+h2 {
+  color: #003366; /* Primary navy */
+  margin-top: 0;
+  font-family: 'Poppins', 'Proxima Nova', 'Avenir', Arial, sans-serif; /* Match h1 font */
+  font-weight: 700; /* Match h1 bold weight */
+  font-size: 2.2em; /* Similar size to h1 */
+  letter-spacing: 1px; /* Match h1 letter spacing */
+}
+
+/* Call-to-Action Section Styles */
+.call-to-action {
+  background-color: #FFC907; /* Primary Yellow */
+  color: #222;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+/* Style the impact story image */
+.impact-image {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 51, 102, 0.10);
+}
+
+/* Impact story heading centered and in brand yellow */
+.impact-story h2 {
+  text-align: center;
+  color: #FFC907;
+}
+
+/* Ensure impact media appears above the text and both are centered */
+.impact-content {
+  display: flex;
+  flex-direction: column; /* stack vertically: media above text */
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Prev/Next buttons for impact stories */
+.impact-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: 12px auto 0 auto;
+}
+
+.impact-button {
+  background: #003366;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.impact-button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* Impact media wrapper (videos/images) */
+.impact-media {
+  display: flex;
+  justify-content: center; /* center media horizontally */
+  align-items: center;
+  flex-direction: column; /* stack media and caption vertically */
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.impact-media-item {
+  width: 100%;
+  max-width: 900px; /* larger media width for impact section */
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.impact-media video {
+  width: 100%;
+  height: auto;
+}
+
+/* Center caption text under media */
+#impactText {
+  text-align: center;
+  max-width: 900px;
+  margin: 12px auto 0 auto;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 800px) {
+  .impact-media-item {
+    max-width: 100%;
+  }
+  #impactText {
+    font-size: 0.95rem;
+  }
+}
+
+/* Donate Button Styles */
+.donate-button {
+  display: inline-block;
+  background-color: #4FCB53; /* Green */
+  color: #fff;
+  padding: 14px 32px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-top: 18px;
+  box-shadow: 0 2px 8px rgba(79, 203, 83, 0.10);
+  transition: background 0.3s, transform 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+/* Change button color when hovered */
+.donate-button:hover {
+  background-color: #159A48; /* Dark Green */
+  transform: translateY(-2px) scale(1.04); /* Slight lift */
+}
+
+/* Add some spacing between sections */
+section {
+  margin-bottom: 20px;
+}
+
+/* 
+  Media Queries for Responsive Design
+  Media queries help make your website look good on different screen sizes,
+  like phones (small screens) and computers (large screens).
+*/
+
+/* This media query applies styles when the screen is 600px wide or less (like on most phones) */
+@media (max-width: 600px) {
+  /* Make hero section padding smaller on small screens */
+  .hero {
+    padding: 32px 8px;
+    font-size: 1em;
+  }
+
+  /* Make headline font size smaller so it fits on small screens */
+  .hero h1 {
+    font-size: 1.4em;
+  }
+
+  /* Make subheadline font size smaller */
+  .hero p {
+    font-size: 1em;
+  }
+
+  /* Make story and call-to-action sections have less padding */
+  .story,
+  .call-to-action,
+  .donation-section {
+    padding: 14px 8px;
+  }
+
+  /* Make impact story image smaller and stack above the text */
+  .impact-content {
+    display: block; /* Stack items vertically */
+    text-align: center;
+  }
+
+  .impact-image {
+    width: 90%;    /* Make image take up most of the width */
+    max-width: 220px;
+  }
+}
+
+/* This media query applies styles when the screen is wider than 600px (like on tablets and computers) */
+@media (min-width: 601px) {
+  /* Show image and text side by side in the impact story */
+  .impact-content {
+    display: flex;           /* Place items in a row */
+    align-items: center;     /* Vertically center items */
+    justify-content: center; /* Center the whole group */
+    gap: 28px;               /* Space between image and text */
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .impact-image {
+    width: 300px;
+  }
+}
